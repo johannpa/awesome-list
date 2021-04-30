@@ -3,12 +3,12 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'al-register-form',
-  templateUrl: './register-form.component.html',
+  selector: 'al-login-form',
+  templateUrl: './login-form.component.html',
   styles: [
   ]
 })
-export class RegisterFormComponent implements OnInit {
+export class LoginFormComponent implements OnInit {
 
   registerForm: FormGroup;
 
@@ -19,12 +19,6 @@ export class RegisterFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
-      'name': ['',[
-        Validators.required,
-        Validators.minLength(4),
-        Validators.maxLength(20),
-        Validators.pattern('^[a-zA-Z0-9_-]*$')
-      ]],
       'email': ['', [
         Validators.required,
         Validators.email
@@ -37,14 +31,14 @@ export class RegisterFormComponent implements OnInit {
     });
   }
 
-  get name() { return this.registerForm.get('name') }
-  get email() { return this.registerForm.get('email') }
+  get email() { return this.registerForm.get('email')}
   get password() { return this.registerForm.get('password') }
 
+
   submit() {
-    console.info(this.name?.value);
     console.info(this.email?.value);
     console.info(this.password?.value);
     this.router.navigate(['/app/dashboard']);
   }
+
 }
