@@ -1,6 +1,6 @@
 <form
 novalidate
-[formGroup]="registerForm"
+[formGroup]="loginForm"
 (ngSubmit)="submit()"
 class="card-body"
 >
@@ -51,8 +51,8 @@ class="card-body"
   <button
   type="submit"
   class="btn"
-  [disabled]="!registerForm.valid"
-  [ngClass]="{'btn-success': registerForm.valid, 'btn-default': !registerForm.valid}"
+  [disabled]="!loginForm.valid"
+  [ngClass]="{'btn-success': loginForm.valid, 'btn-default': !loginForm.valid}"
   >
     Connexion
   </button>

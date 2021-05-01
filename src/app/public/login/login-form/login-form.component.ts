@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'al-login-form',
@@ -10,7 +10,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginFormComponent implements OnInit {
 
-  registerForm: FormGroup;
+  loginForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -18,7 +18,7 @@ export class LoginFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.registerForm = this.fb.group({
+    this.loginForm = this.fb.group({
       'email': ['', [
         Validators.required,
         Validators.email
@@ -31,8 +31,8 @@ export class LoginFormComponent implements OnInit {
     });
   }
 
-  get email() { return this.registerForm.get('email')}
-  get password() { return this.registerForm.get('password') }
+  get email() { return this.loginForm.get('email')}
+  get password() { return this.loginForm.get('password') }
 
 
   submit() {
