@@ -1,17 +1,18 @@
 <form
 novalidate
+class="card-body"
 [formGroup]="loginForm"
 (ngSubmit)="submit()"
-class="card-body"
 >
 <div class="form-group">
   <label for="email">Email</label>
   <input
   id="email"
-  type="text"
+  type="email"
+  required
   formControlName="email"
   class="form-control"
-  placeholder="Votre mail"
+  placeholder="Votre email"
   autocorrect="off"
   autocomplete="off"
   >
@@ -20,7 +21,7 @@ class="card-body"
       Email requis.
     </span>
     <span [hidden]="!email.errors.email">
-      Entrez une adresse email valide.
+      Entrez une adresse email correcte.
     </span>
   </small>
 </div>
@@ -30,6 +31,7 @@ class="card-body"
   <input
   id="password"
   type="password"
+  required
   formControlName="password"
   class="form-control"
   placeholder="Votre mot de passe"
@@ -54,7 +56,7 @@ class="card-body"
   [disabled]="!loginForm.valid"
   [ngClass]="{'btn-success': loginForm.valid, 'btn-default': !loginForm.valid}"
   >
-    Connexion
+    Connexion <i class="material-icons align-middle">arrow_right_alt</i>
   </button>
 </p>
 
