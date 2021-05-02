@@ -19,7 +19,7 @@ export class WorkdayFormComponent implements OnInit {
     this.workdayForm = this.createWorkdayForm()
   }
 
-  get dueDate() { return this.workdayForm.get('dueDate'); }
+  get dueDate() { return this.workdayForm.get('dueDate') as any; }
   get notes() { return this.workdayForm.get('notes'); }
   get tasks() { return this.workdayForm.get('tasks') as FormArray; }
 
