@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'al-workday-form-notes',
@@ -8,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkdayFormNotesComponent implements OnInit {
 
-  constructor() { }
+  @Input() notes: FormControl;
+  
+
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }
+
 
 }
