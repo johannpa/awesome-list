@@ -24,7 +24,7 @@ export class WorkdayFormComponent implements OnInit {
   get tasks() { return this.workdayForm.get('tasks') as FormArray; }
 
   createWorkdayForm(): FormGroup {
-    const workdayForm = this.fb.group({
+    const workdayForm: FormGroup = this.fb.group({
       dueDate: ['', [
         Validators.required
       ]],
