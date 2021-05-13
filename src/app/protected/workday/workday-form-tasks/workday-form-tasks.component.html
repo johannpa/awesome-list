@@ -8,7 +8,7 @@
     [index]="i"
     [isFirst]="isFirst"
     [isLast]="isLast"
-    [task]="task"
+    [task as formGroup]="task"
     (removedTask)="onRemovedTask($event)">
     </al-workday-form-tasks-item>
   </div>
