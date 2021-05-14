@@ -8,10 +8,13 @@ import { Toastr } from 'src/app/shared/models/toastr';
 })
 export class ToastrService {
 
+
   private toastr: BehaviorSubject<Toastr|null> = new BehaviorSubject(null);
   public readonly toastr$: Observable<Toastr|null> = this.toastr.asObservable();
 
   constructor() { }
+
+
 
   public showToastr(toastr: Toastr): void {
     timer(0, 3000).pipe(take(2)).subscribe(i => {
@@ -21,5 +24,8 @@ export class ToastrService {
         this.toastr.next(null);
       }
     });
+  }
+  public closeToastr() {
+    this.toastr.next(null);
   }
 }

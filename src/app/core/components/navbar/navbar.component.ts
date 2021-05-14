@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LayoutService } from 'src/app/core/services/layout.service';
 
 @Component({
   selector: 'al-navbar',
@@ -12,9 +13,16 @@ export class NavbarComponent implements OnInit {
   public loginPath = 'login';
   public registerPath = 'register';
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private layoutService: LayoutService
+    ) { }
 
   ngOnInit(): void {
+  }
+
+  public toggleSidenav() {
+    this.layoutService.toggleSidenav();
   }
 
   public isActive(page: string): boolean {
